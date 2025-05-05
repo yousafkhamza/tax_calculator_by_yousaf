@@ -22,9 +22,8 @@ def calculate_tax_2025_26():
         pf = get_float_input("Enter monthly PF Contribution: ")
         prof_tax = get_float_input("Enter monthly Professional Tax: ")
         lwf = get_float_input("Enter monthly Labor Welfare Fund: ")
-        misc = get_float_input("Enter monthly Miscellaneous Income: ")
 
-        monthly_gross = basic + hra + special_allowance + misc + lta
+        monthly_gross = basic + hra + special_allowance + lta
         monthly_deductions = pf + prof_tax + lwf
 
         gross_annual = (12 * monthly_gross) + bonus
@@ -37,9 +36,8 @@ def calculate_tax_2025_26():
         special_allowance = get_float_input("Enter annual Special Allowance: ")
         lta = get_float_input("Enter annual LTA: ")
         pf = get_float_input("Enter annual PF Contribution: ")
-        misc = get_float_input("Enter annual Miscellaneous Income: ")
 
-        gross_annual = basic + hra + special_allowance + misc + lta + bonus
+        gross_annual = basic + hra + special_allowance + lta + bonus
         deductions_annual = pf
         annual_lta = lta
     else:
