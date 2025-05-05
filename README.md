@@ -1,5 +1,8 @@
 # Indian Tax Calculator FY 2025-26
 
+![Version](https://img.shields.io/badge/version-0.1.2-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 A simple calculator to compute income tax for India based on old and new regimes for Financial Year 2025-26.
 
 ## Features

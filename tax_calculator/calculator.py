@@ -6,6 +6,7 @@ A simple calculator to compute income tax for India based on old and new regimes
 def calculate_tax_2025_26():
     """
     Main function to run the tax calculator interactively.
+    Provides detailed breakdown of tax calculation for FY 2025-26.
     """
     print("\n===== Salary & Tax Calculator for FY 2025-26 =====\n")
 
@@ -145,6 +146,7 @@ def calculate_new_regime_tax(income):
 def main():
     """
     Entry point for the command-line script.
+    Handles exceptions gracefully and provides user-friendly error messages.
     """
     try:
         calculate_tax_2025_26()
