@@ -20,7 +20,7 @@ def calculate_tax_2025_26():
         special_allowance = get_float_input("Enter monthly Special Allowance: ")
         lta = get_float_input("Enter monthly LTA: ")
         pf = get_float_input("Enter monthly PF Contribution: ")
-        additional_incentives = get_float_input("Enter monthly Additional Incentives (if any, total): ")
+        additional_incentives = get_float_input("Enter monthly Additional Incentives/Allowance (Bonus, Internet, Driver, etc. total): ")
         additional_deductions = get_float_input("Enter monthly Additional Deductions (PT, LWF, etc. total): ")
 
         monthly_gross = basic + hra + special_allowance + lta + additional_incentives

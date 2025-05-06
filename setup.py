@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="tax_calculator_by_yousaf",
-    version="0.2.1",
+    version="0.2.2",
     author="Yousaf Khamza",
     author_email="yousaf@example.com",  # Replace with your actual email
     description="A simple calculator to compute income tax for India FY 2025-26",
