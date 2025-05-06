@@ -10,6 +10,8 @@ A comprehensive calculator to compute income tax for India based on both old and
 - Calculate tax based on either monthly or yearly salary inputs
 - Support for both old and new tax regimes with accurate 2025-26 tax slabs
 - Detailed breakdown of tax calculation
+- Monthly mode includes options for consolidated additional incentives/allowances
+- Yearly mode includes annual bonus/variable pay input
 - Considers standard deduction, PF, LTA, HRA, and other components
 - Additional tax-saving deductions for old regime (80C, 80D, 80E)
 - Computes in-hand salary after all deductions
@@ -106,11 +108,35 @@ For a salaried individual with an annual income of ₹15 lakhs:
 
 The calculator guides you through a simple interactive process:
 
-1. Choose monthly or yearly input mode
-2. Enter salary components (Basic, HRA, etc.)
+### Monthly Input Mode
+
+1. Choose monthly input mode
+2. Enter monthly salary components:
+   - Basic Salary
+   - HRA
+   - Special Allowance
+   - Additional Incentives/Allowances (consolidated)
+   - LTA
+   - PF Contribution
+   - Professional Tax
+   - Labor Welfare Fund
 3. Select tax regime
 4. For old regime, enter additional deductions
-5. View calculated tax and in-hand salary
+5. View calculated monthly tax and in-hand salary
+
+### Yearly Input Mode
+
+1. Choose yearly input mode
+2. Enter Annual Bonus/Variable Pay
+3. Enter yearly salary components:
+   - Basic Salary
+   - HRA
+   - Special Allowance
+   - LTA
+   - PF Contribution
+4. Select tax regime
+5. For old regime, enter additional deductions
+6. View calculated annual tax and in-hand salary
 
 ## Requirements
 
