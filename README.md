@@ -1,6 +1,6 @@
 # Indian Tax Calculator FY 2025-26
 
-![Version](https://img.shields.io/badge/version-0.2.0-blue)
+![Version](https://img.shields.io/badge/version-0.2.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 A comprehensive calculator to compute income tax for India based on both old and new tax regimes for Financial Year 2025-26, reflecting the latest changes from Budget 2025.
@@ -10,7 +10,9 @@ A comprehensive calculator to compute income tax for India based on both old and
 - Calculate tax based on either monthly or yearly salary inputs
 - Support for both old and new tax regimes with accurate 2025-26 tax slabs
 - Detailed breakdown of tax calculation
-- Monthly mode includes options for consolidated additional incentives/allowances
+- Monthly mode includes options for:
+- Consolidated additional incentives/allowances (performance pay, special allowance, etc.)
+- Consolidated additional deductions (Professional Tax, Labor Welfare Fund, etc.)
 - Yearly mode includes annual bonus/variable pay input
 - Considers standard deduction, PF, LTA, HRA, and other components
 - Additional tax-saving deductions for old regime (80C, 80D, 80E)
@@ -92,17 +94,66 @@ calculate_tax_2025_26()
 
 ### Example 1: Income of ₹10 lakhs
 
-For a salaried individual with an annual income of ₹10 lakhs and standard deductions:
+For a salaried individual with an annual income of ₹10 lakhs:
 
-- **New Regime**: Effective tax of approximately ₹44,200
-- **Old Regime**: With deductions of approximately ₹3 lakhs, tax could be approximately ₹30,264
+**Monthly Breakdown:**
+
+- Basic: ₹50,000
+- HRA: ₹20,000
+- Special Allowance: ₹9,000
+- Additional Incentives: ₹3,000
+- LTA: ₹1,000
+- PF: ₹6,000
+- Additional Deductions: ₹300 (₹200 PT + ₹100 LWF)
+
+**Annual Calculation:**
+
+- **New Regime**: Effective tax of approximately ₹0 (due to rebate)
+- **Old Regime**: With deductions of approximately ₹2.5 lakhs, tax could be approximately ₹31,200
 
 ### Example 2: Income of ₹15 lakhs
 
 For a salaried individual with an annual income of ₹15 lakhs:
 
-- **New Regime**: Effective tax of approximately ₹1,30,000
+**Annual Breakdown:**
+
+- Basic: ₹750,000
+- HRA: ₹300,000
+- Special Allowance: ₹260,000
+- LTA: ₹40,000
+- Annual Bonus: ₹150,000
+- PF: ₹90,000
+
+**Tax Calculation:**
+
+- **New Regime**: Effective tax of approximately ₹97,500
 - **Old Regime**: With deductions of approximately ₹3 lakhs, tax could be approximately ₹1,42,896
+
+### Common Deductions in India
+
+**Monthly Salary Components:**
+
+- Basic Salary: The fixed part of your salary
+- HRA (House Rent Allowance): Tax-exempt under conditions in old regime
+- Special Allowance: Fully taxable component
+- Additional Incentives can include:
+  - Meal Allowance
+  - Transport Allowance
+  - Telephone/Internet Reimbursement
+  - Uniform Allowance
+  - Medical Allowance
+
+**Monthly Deductions:**
+
+- PF (Provident Fund): Usually 12% of Basic Salary
+- Professional Tax: Varies by state (₹200-300 per month)
+- Labor Welfare Fund: Nominal amount (₹20-100) depending on state
+
+**Annual Components:**
+
+- LTA (Leave Travel Allowance): Tax-exempt for domestic travel under old regime
+- Annual Bonus/Variable Pay: Performance-based payment
+- Annual Incentives: Special performance bonuses
 
 ## Command-Line Interface
 
@@ -115,11 +166,10 @@ The calculator guides you through a simple interactive process:
    - Basic Salary
    - HRA
    - Special Allowance
-   - Additional Incentives/Allowances (consolidated)
+   - Additional Incentives/Allowances (consolidated: meal allowance, transport allowance, etc.)
    - LTA
    - PF Contribution
-   - Professional Tax
-   - Labor Welfare Fund
+   - Additional Deductions (consolidated: Professional Tax, Labor Welfare Fund, etc.)
 3. Select tax regime
 4. For old regime, enter additional deductions
 5. View calculated monthly tax and in-hand salary

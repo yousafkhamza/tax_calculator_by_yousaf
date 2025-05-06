@@ -20,12 +20,11 @@ def calculate_tax_2025_26():
         special_allowance = get_float_input("Enter monthly Special Allowance: ")
         lta = get_float_input("Enter monthly LTA: ")
         pf = get_float_input("Enter monthly PF Contribution: ")
-        prof_tax = get_float_input("Enter monthly Professional Tax: ")
-        lwf = get_float_input("Enter monthly Labor Welfare Fund: ")
-        additional_incentives = get_float_input("Enter monthly Additional Incentives/Allowances (total): ")
+        additional_incentives = get_float_input("Enter monthly Additional Incentives (if any, total): ")
+        additional_deductions = get_float_input("Enter monthly Additional Deductions (PT, LWF, etc. total): ")
 
         monthly_gross = basic + hra + special_allowance + lta + additional_incentives
-        monthly_deductions = pf + prof_tax + lwf
+        monthly_deductions = pf + additional_deductions
 
         # No bonus in monthly mode
         gross_annual = (12 * monthly_gross)
