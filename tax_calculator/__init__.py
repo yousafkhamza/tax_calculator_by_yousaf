@@ -3,7 +3,7 @@ Tax Calculator for FY 2025-26
 A simple calculator to compute income tax for India based on old and new regimes.
 """
 
-__version__ = '0.2.2'
+__version__ = '0.2.3'
 __author__ = 'Yousaf Khamza'
 
 from .calculator import (

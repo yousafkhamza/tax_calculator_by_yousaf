@@ -1,6 +1,6 @@
 # Indian Tax Calculator FY 2025-26
 
-![Version](https://img.shields.io/badge/version-0.2.2-blue)
+![Version](https://img.shields.io/badge/version-0.2.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 A comprehensive calculator to compute income tax for India based on both old and new tax regimes for Financial Year 2025-26, reflecting the latest changes from Budget 2025.
@@ -11,13 +11,16 @@ A comprehensive calculator to compute income tax for India based on both old and
 - Support for both old and new tax regimes with accurate 2025-26 tax slabs
 - Detailed breakdown of tax calculation
 - Monthly mode includes options for:
-- Consolidated additional incentives/allowances (performance pay, special allowance, etc.)
-- Consolidated additional deductions (Professional Tax, Labor Welfare Fund, etc.)
-- Yearly mode includes annual bonus/variable pay input
+  - Consolidated additional incentives/allowances (performance pay, special allowance, etc.)
+  - One-time bonus/variable pay (not multiplied by 12)
+  - Consolidated additional deductions (Professional Tax, Labor Welfare Fund, etc.)
+  - Detailed calculations for bonus month including in-hand amount
+- Yearly mode provides annual salary calculation
 - Considers standard deduction, PF, LTA, HRA, and other components
+- Proper handling of EPF contributions in new tax regime
 - Additional tax-saving deductions for old regime (80C, 80D, 80E)
 - Computes in-hand salary after all deductions
-- Easy-to-use command-line interface
+- Easy-to-use command-line interface with helpful notes
 
 ## Installation
 
@@ -65,6 +68,7 @@ calculate_tax_2025_26()
 - Section 87A rebate up to ₹60,000 for income up to ₹12,00,000
   - Effective zero tax for income up to ₹12,00,000
   - For salaried individuals, effective zero tax for income up to ₹12,75,000 (due to standard deduction)
+- Important: EPF contributions are NOT tax-exempt under the new regime
 
 ### Old Regime
 
@@ -74,8 +78,9 @@ calculate_tax_2025_26()
   - ₹2,50,001 to ₹5,00,000: 5%
   - ₹5,00,001 to ₹10,00,000: 20%
   - Above ₹10,00,000: 30%
-- Section 87A rebate applicable for income up to ₹5,00,000
+- Section 87A rebate applicable for income up to ₹5,00,000 (₹12,500 rebate)
 - Additional deductions available (80C, 80D, 80E, etc.)
+- EPF contributions are tax-exempt
 
 ### Surcharge Details
 
@@ -85,75 +90,17 @@ calculate_tax_2025_26()
 - 37% for income above ₹5 crore (25% under new regime)
 - Health and Education Cess of 4% applicable on all tax amounts
 
+## EPF Treatment in New Tax Regime
+
+- Employer's EPF contribution (up to 12% of salary) remains tax-exempt
+- Combined employer contributions to EPF, NPS, and superannuation funds are tax-exempt up to ₹7.5 lakh
+- Employee's EPF contribution is NOT eligible for tax deduction under the new regime
+- Interest earned on EPF up to ₹2.5 lakh contribution remains tax-exempt
+
 ## When to Choose Which Regime?
 
 - **New Regime**: Beneficial for individuals with fewer tax-saving investments or deductions, especially those with income above ₹15 lakhs
 - **Old Regime**: May be more beneficial for individuals with significant tax-saving investments and deductions
-
-## Example Calculations
-
-### Example 1: Income of ₹10 lakhs
-
-For a salaried individual with an annual income of ₹10 lakhs:
-
-**Monthly Breakdown:**
-
-- Basic: ₹50,000
-- HRA: ₹20,000
-- Special Allowance: ₹9,000
-- Additional Incentives: ₹3,000
-- LTA: ₹1,000
-- PF: ₹6,000
-- Additional Deductions: ₹300 (₹200 PT + ₹100 LWF)
-
-**Annual Calculation:**
-
-- **New Regime**: Effective tax of approximately ₹0 (due to rebate)
-- **Old Regime**: With deductions of approximately ₹2.5 lakhs, tax could be approximately ₹31,200
-
-### Example 2: Income of ₹15 lakhs
-
-For a salaried individual with an annual income of ₹15 lakhs:
-
-**Annual Breakdown:**
-
-- Basic: ₹750,000
-- HRA: ₹300,000
-- Special Allowance: ₹260,000
-- LTA: ₹40,000
-- Annual Bonus: ₹150,000
-- PF: ₹90,000
-
-**Tax Calculation:**
-
-- **New Regime**: Effective tax of approximately ₹97,500
-- **Old Regime**: With deductions of approximately ₹3 lakhs, tax could be approximately ₹1,42,896
-
-### Common Deductions in India
-
-**Monthly Salary Components:**
-
-- Basic Salary: The fixed part of your salary
-- HRA (House Rent Allowance): Tax-exempt under conditions in old regime
-- Special Allowance: Fully taxable component
-- Additional Incentives can include:
-  - Meal Allowance
-  - Transport Allowance
-  - Telephone/Internet Reimbursement
-  - Uniform Allowance
-  - Medical Allowance
-
-**Monthly Deductions:**
-
-- PF (Provident Fund): Usually 12% of Basic Salary
-- Professional Tax: Varies by state (₹200-300 per month)
-- Labor Welfare Fund: Nominal amount (₹20-100) depending on state
-
-**Annual Components:**
-
-- LTA (Leave Travel Allowance): Tax-exempt for domestic travel under old regime
-- Annual Bonus/Variable Pay: Performance-based payment
-- Annual Incentives: Special performance bonuses
 
 ## Command-Line Interface
 
@@ -166,27 +113,34 @@ The calculator guides you through a simple interactive process:
    - Basic Salary
    - HRA
    - Special Allowance
-   - Additional Incentives/Allowances (consolidated: meal allowance, transport allowance, etc.)
    - LTA
    - PF Contribution
-   - Additional Deductions (consolidated: Professional Tax, Labor Welfare Fund, etc.)
+   - Additional Incentives/Allowances
+   - Additional Deductions (PT, LWF, etc.)
+   - One-time Bonus/Variable Pay (not multiplied by 12)
 3. Select tax regime
 4. For old regime, enter additional deductions
 5. View calculated monthly tax and in-hand salary
+6. If bonus was entered, see detailed bonus month calculation including:
+   - Gross salary for bonus month
+   - Additional tax due to bonus
+   - Total tax for bonus month
+   - In-hand salary for bonus month
+   - Updated annual total with bonus
 
 ### Yearly Input Mode
 
 1. Choose yearly input mode
-2. Enter Annual Bonus/Variable Pay
-3. Enter yearly salary components:
+2. Enter yearly salary components:
    - Basic Salary
    - HRA
    - Special Allowance
    - LTA
    - PF Contribution
-4. Select tax regime
-5. For old regime, enter additional deductions
-6. View calculated annual tax and in-hand salary
+3. Select tax regime
+4. For old regime, enter additional deductions
+5. View calculated annual tax and in-hand salary
+6. See note about calculating bonus in monthly mode
 
 ## Requirements
 
